@@ -1,13 +1,13 @@
 <template>
   <div>
-    <nav class="navbar navbar-light bg-light ">
+    <nav class="navbar navbar-light bg-light py-3" style="box-shadow: 0px 0px 10px -5px rgba(0,0,0,0.75);">
       <div class="container-fluid justify-content-center align-items-center">
         <a class="navbar-brand " href="#">
           <h1>CRUD Todo List with Vite VueJS 3</h1>
         </a>
       </div>
     </nav>
-    
+
     <todo-list :todos="todos" @toggleComplete="toggleComplete" @deleteTodo="deleteTodo" @addTodo="addTodo"></todo-list>
   </div>
 </template>

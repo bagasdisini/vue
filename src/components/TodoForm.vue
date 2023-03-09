@@ -1,5 +1,5 @@
 <template>
-  <form class="row g-3 mt-2 " @submit.prevent="$emit('addTodo', newTodo)">
+  <form class="row g-3 mt-2 " @submit.prevent="addTodo">
     <div class="col-7 ">
       <input type="text" class="form-control" v-model="newTodo" placeholder="Input">
     </div>
@@ -17,5 +17,11 @@ export default {
       newTodo: '',
     }
   },
+  methods: {
+    addTodo() {
+      this.$emit('addTodo', this.newTodo);
+      this.newTodo = '';
+    }
+  }
 }
 </script>
