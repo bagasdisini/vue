@@ -1,8 +1,15 @@
 <template>
-  <li :class="{ completed }">
-    <span @click="toggleComplete">{{ todo.text }}</span>
-    <button @click="deleteTodo">X</button>
+  <li :class="{ completed }" class="list-group-item d-flex justify-content-between border-0 mb-2 rounded"
+    style="background-color: #f4f6f7;">
+    <div class="d-flex align-items-center">
+      <input @click="toggleComplete" class="form-check-input me-2" type="checkbox" value="" aria-label="..." />
+      <span>{{ todo.text }}</span>
+    </div>
+    <a @click="deleteTodo" href="#!" data-mdb-toggle="tooltip" title="Remove item">
+      <i class="fas fa-times text-primary"></i>
+    </a>
   </li>
+
 </template>
 
 <script>

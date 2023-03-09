@@ -1,15 +1,21 @@
 <template>
-  <div class="checkbox-container">
-    <h2 class="heading">To-do list</h2>
-    <todo-item
-        v-for="(todo, index) in todos"
-        :key="index"
-        :todo="todo"
-        @toggleComplete="toggleComplete(index)"
-        @deleteTodo="deleteTodo(index)"
-    ></todo-item>
-    <todo-form @addTodo="addTodo"></todo-form>
-  </div>
+  <section class="vh-100" style="background-color: #e2d5de;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center">
+        <div class="col col-xl-5">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="mb-3">Todo List</h2>
+              <todo-item v-for="(todo, index) in todos" :key="index" :todo="todo" @toggleComplete="toggleComplete(index)"
+                @deleteTodo="deleteTodo(index)"></todo-item>
+              <todo-form @addTodo="addTodo"></todo-form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </template>
 
 <script>
@@ -53,6 +59,7 @@ body {
   font-size: 14px;
   color: #484848;
 }
+
 .checkbox-container {
   padding: 18px;
   border: 1px solid #e5e5e5;
@@ -64,10 +71,12 @@ body {
   width: 250px;
   box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
 }
+
 .heading {
   margin-inline: 0;
   margin-block: 6px;
 }
+
 .checkbox-group {
   border: 1px solid #e5e5e5;
   padding: 10px;
@@ -86,11 +95,11 @@ input[type="checkbox"] {
   visibility: hidden;
 }
 
-input[type="checkbox"] ~ label {
+input[type="checkbox"]~label {
   position: relative;
 }
 
-input[type="checkbox"] ~ label:before {
+input[type="checkbox"]~label:before {
   content: "";
   position: absolute;
   border: 1px solid #e5e5e5;
@@ -106,11 +115,11 @@ input[type="checkbox"] ~ label:before {
   background-color: #ffffff;
 }
 
-input[type="checkbox"]:checked ~ label {
+input[type="checkbox"]:checked~label {
   color: #ffffff;
 }
 
-input[type="checkbox"]:checked ~ label:before {
+input[type="checkbox"]:checked~label:before {
   content: "✔";
   color: #0d6efd;
 }
